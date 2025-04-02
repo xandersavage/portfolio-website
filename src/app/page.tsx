@@ -1,4 +1,3 @@
-import { Container } from "@/components/layout/Container";
 import { Hero } from "@/components/sections/Hero";
 
 const HomePage = () => {

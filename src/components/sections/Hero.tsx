@@ -2,16 +2,20 @@
 "use client";
 
 import { Meteors } from "@/components/magicui/meteors";
-import { TextAnimate } from "@/components/magicui/text-animate";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { BlurFade } from "@/components/magicui/blur-fade";
+import { RainbowButton } from "@/components/magicui/rainbow-button";
+import { ShinyButton } from "@/components/magicui/shiny-button";
 
 export function Hero() {
   return (
-    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-slate-950 pb-24">
+    <div
+      className={
+        "relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-slate-950"
+      }
+    >
       {/* Dark meteors with varied sizes */}
       <Meteors
-        number={95}
+        number={150}
         minSize={0.6}
         maxSize={4.5}
         minDuration={5}
@@ -24,115 +28,64 @@ export function Hero() {
         className="z-0 opacity-90"
       />
 
-      {/* Main heading with your name using gradients and staggered animation */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto">
-        <div className="mb-4 flex items-center space-x-2">
-          <TextAnimate
-            animation="slideLeft"
-            as="h1"
-            duration={1.5}
-            by="character"
-            className="whitespace-pre-wrap bg-clip-text text-4xl md:text-5xl font-bold leading-tight text-amber-50"
-            delay={0} // Start immediately
-            once
-          >
-            Alexander
-          </TextAnimate>
-          <TextAnimate
-            animation="slideRight"
-            as="h1"
-            duration={1.5}
-            by="character"
-            className="whitespace-pre-wrap bg-clip-text text-4xl md:text-5xl font-bold leading-tight text-amber-50"
-            delay={1.5} // Start slightly after "Alexander"
-            once
-          >
-            Olomukoro
-          </TextAnimate>
-        </div>
+      {/* Main content with proper spacing */}
+      <div className="relative z-10 px-6 w-full max-w-5xl mx-auto py-16">
+        <div className="flex flex-col items-center justify-center text-center space-y-10">
+          {/* Name with increased spacing */}
+          <BlurFade delay={0.25} inView>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl text-amber-50 font-heading">
+              Alexander Olomukoro
+            </h1>
+          </BlurFade>
 
-        {/* Animated role description with a further delay */}
-        <div className="h-12 mb-8">
-          <TextAnimate
-            animation="blurInUp"
-            as="h2"
-            duration={1.5}
-            by="line"
-            className="text-4xl text-amber-50 md:text-5xl font-bold tracking-tight"
-            delay={3.5} // Start after both parts of the name
-            once
-          >
-            Full-Stack Developer
-          </TextAnimate>
-        </div>
+          {/* Role with proper spacing */}
+          <BlurFade delay={0.5 * 2} inView>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-amber-50 font-heading">
+              Full-Stack Developer
+            </h2>
+          </BlurFade>
 
-        {/* Tech stack pills */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8 max-w-2xl">
-          {[
-            "TypeScript",
-            "React",
-            "Node.js",
-            "Next.js",
-            "MongoDB",
-            "PostgreSQL",
-          ].map((tech) => (
-            <span
-              key={tech}
-              className="px-3 py-1 text-sm bg-slate-800/70 text-gray-300 rounded-full border border-slate-700/50"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
+          {/* Tech stack pills - centered properly with spacing */}
+          <div className="w-full flex justify-center pt-4">
+            <BlurFade delay={0.5 * 3} inView>
+              <div className="flex flex-wrap justify-center gap-3 max-w-3xl">
+                {[
+                  "TypeScript",
+                  "React",
+                  "Node.js",
+                  "Next.js",
+                  "MongoDB",
+                  "PostgreSQL",
+                ].map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-4 py-2 text-base md:text-lg bg-slate-800/70 text-gray-300 rounded-full border border-slate-700/50 font-body"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </BlurFade>
+          </div>
 
-        {/* Brief introduction */}
-        <p className="text-gray-400 mb-8 max-w-2xl">
-          I build performant, accessible web applications with modern
-          technologies. Specializing in creating seamless user experiences
-          backed by robust server-side solutions.
-        </p>
+          {/* Brief introduction - larger text with more spacing */}
+          <BlurFade delay={0.5 * 4} inView>
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-300 sm:mb-10 mb-5 max-w-3xl font-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+            </p>
+          </BlurFade>
 
-        {/* Call to action buttons */}
-        <div className="flex flex-wrap gap-4 justify-center">
-          <Link
-            href="/projects"
-            className="group px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors flex items-center"
-          >
-            View My Work
-            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <Link
-            href="/contact"
-            className="px-6 py-3 bg-transparent hover:bg-white/10 text-white border border-white/30 rounded-md transition-colors"
-          >
-            Contact Me
-          </Link>
+          {/* Call to action buttons with increased spacing */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center sm:pt-6 w-full">
+            <RainbowButton className="text-xl">View My Work</RainbowButton>
+            <ShinyButton speed={1} className="text-xl cursor-pointer">
+              Hire Me
+            </ShinyButton>
+          </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-28 left-0 right-0 flex justify-center animate-bounce">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 text-gray-400 cursor-pointer"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          onClick={() =>
-            window.scrollTo({
-              top: window.innerHeight,
-              behavior: "smooth",
-            })
-          }
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
-        </svg>
-      </div>
     </div>
   );
 }

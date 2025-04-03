@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Add this to your globals.css file */
 @keyframes meteor {
   0% {
     transform: rotate(215deg) translateX(0);
@@ -18,4 +17,19 @@
 
 .animate-meteor {
   animation: meteor var(--duration, 5s) linear var(--delay, 0s) infinite;
+}
+
+@theme inline {
+  /* Define font family variables */
+  --font-heading: var(--font-space-mono);
+  --font-body: var(--font-roboto);
+}
+
+@keyframes shine {
+  0% {
+    --x: -100%;
+  }
+  100% {
+    --x: 200%;
+  }
 }

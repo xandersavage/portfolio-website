@@ -5,6 +5,7 @@ import { Meteors } from "@/components/magicui/meteors";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
 import { ShinyButton } from "@/components/magicui/shiny-button";
+import { AuroraText } from "@/components/magicui/aurora-text";
 
 export function Hero() {
   return (
@@ -41,7 +42,7 @@ export function Hero() {
           {/* Role with proper spacing */}
           <BlurFade delay={0.5 * 2} inView>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-amber-50 font-heading">
-              Full-Stack Developer
+              <AuroraText>Full-Stack Developer</AuroraText>
             </h2>
           </BlurFade>
 

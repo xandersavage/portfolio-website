@@ -76,12 +76,14 @@ export function Hero() {
           </BlurFade>
 
           {/* Call to action buttons with increased spacing */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center sm:pt-6 w-full">
-            <RainbowButton className="text-xl">View My Work</RainbowButton>
-            <ShinyButton speed={1} className="text-xl cursor-pointer">
-              Hire Me
-            </ShinyButton>
-          </div>
+          <BlurFade delay={0.5 * 5} inView>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center sm:pt-6 w-full font-body">
+              <RainbowButton className="text-xl">View My Work</RainbowButton>
+              <ShinyButton speed={1} className="text-xl cursor-pointer">
+                Hire Me
+              </ShinyButton>
+            </div>
+          </BlurFade>
         </div>
       </div>
 

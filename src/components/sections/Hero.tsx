@@ -71,7 +71,7 @@ export function Hero() {
 
           {/* Brief introduction - larger text with more spacing */}
           <BlurFade delay={0.5 * 4} inView>
-            <p className="text-lg md:text-xl lg:text-2xl text-gray-300 sm:mb-10 mb-5 max-w-3xl font-body">
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-300 sm:mb-10 mb-5 max-w-3xl font-body hidden md:block">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
             </p>
           </BlurFade>

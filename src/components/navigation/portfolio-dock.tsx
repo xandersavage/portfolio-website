@@ -6,6 +6,7 @@ import React from "react";
 
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { ModeToggle } from "../theme/mode-toggle";
 import {
   Tooltip,
   TooltipContent,
@@ -159,6 +160,17 @@ export default function DockDemo() {
             </Tooltip>
           </DockIcon>
         ))}
+        <Separator orientation="vertical" className="h-full py-2" />
+        <DockIcon>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <ModeToggle />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Theme</p>
+            </TooltipContent>
+          </Tooltip>
+        </DockIcon>
       </Dock>
     </TooltipProvider>
   );

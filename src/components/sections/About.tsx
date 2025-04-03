@@ -164,7 +164,7 @@ export function About() {
             {/* Introduction */}
             <div className="text-slate-700 dark:text-slate-300 space-y-4 font-body">
               <p className="text-base md:text-lg lg:text-xl leading-relaxed">
-                I'm a{" "}
+                I&apos;m a{" "}
                 <span className="font-semibold text-slate-900 dark:text-white">
                   Full Stack Developer
                 </span>{" "}
@@ -214,8 +214,8 @@ export function About() {
                       Performance Optimization
                     </h4>
                     <p className="text-base md:text-lg">
-                      I'm committed to building applications that are not just
-                      functional, but blazing fast and responsive.
+                      I&apos;m committed to building applications that are not
+                      just functional, but blazing fast and responsive.
                     </p>
                   </div>
                 </div>
@@ -231,7 +231,7 @@ export function About() {
                       Clean, Maintainable Code
                     </h4>
                     <p className="text-base md:text-lg">
-                      I write code with the future in mind, ensuring it's
+                      I write code with the future in mind, ensuring it&apos;s
                       well-documented, tested, and easy to maintain.
                     </p>
                   </div>

@@ -33,3 +33,37 @@
     --x: 200%;
   }
 }
+
+:root {
+  --color-frontend: hsl(215, 90%, 70%);
+  --color-backend: hsl(150, 70%, 50%);
+  --color-database: hsl(280, 70%, 60%);
+  --color-authentication: hsl(30, 80%, 60%);
+  --color-ui-component: hsl(190, 70%, 60%);
+  --color-animation: hsl(320, 70%, 70%);
+  --color-utility: hsl(60, 60%, 60%);
+  --color-other: hsl(200, 20%, 70%);
+
+  /* Chart colors from Shadcn */
+  --chart-1: 222.2 84% 4.9%;
+  --chart-2: 217.2 91.2% 59.8%;
+  --chart-3: 280 65% 60%;
+  --chart-4: 120 65% 55%;
+  --chart-5: 30 65% 60%;
+  --chart-6: 210 65% 60%;
+  --chart-7: 330 65% 60%;
+  --chart-8: 60 65% 60%;
+  --chart-9: 250 65% 60%;
+}
+
+.dark {
+  --chart-1: 210 40% 98%;
+  --chart-2: 217.2 91.2% 59.8%;
+  --chart-3: 280 65% 60%;
+  --chart-4: 120 65% 55%;
+  --chart-5: 30 65% 60%;
+  --chart-6: 210 65% 60%;
+  --chart-7: 330 65% 60%;
+  --chart-8: 60 65% 60%;
+  --chart-9: 250 65% 60%;
+}

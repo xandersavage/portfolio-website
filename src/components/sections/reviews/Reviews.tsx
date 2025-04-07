@@ -67,6 +67,46 @@ const reviewsData: ReviewData[] = [
     img: "https://randomuser.me/api/portraits/women/8.jpg",
     rating: 5,
   },
+  {
+    id: "review7",
+    name: "Thomas Wright",
+    username: "VP Engineering at CloudScale",
+    body: "Implemented a complex microservices architecture with Docker and Kubernetes that scaled flawlessly during our 10x growth phase. The CI/CD pipeline saved us countless development hours.",
+    img: "https://randomuser.me/api/portraits/men/4.jpg",
+    rating: 5,
+  },
+  {
+    id: "review8",
+    name: "Sophia Rodriguez",
+    username: "Lead Designer at CreativeTech",
+    body: "Exceptional front-end development skills. The animations and responsive design implementation perfectly captured our vision while maintaining excellent performance metrics.",
+    img: "https://randomuser.me/api/portraits/women/23.jpg",
+    rating: 5,
+  },
+  {
+    id: "review9",
+    name: "James Kim",
+    username: "Startup Founder & CEO",
+    body: "Built our MVP from scratch using Next.js and MongoDB. The architecture choices enabled us to iterate quickly and secure our first round of funding based on the technical foundation.",
+    img: "https://randomuser.me/api/portraits/men/36.jpg",
+    rating: 5,
+  },
+  {
+    id: "review10",
+    name: "Aisha Patel",
+    username: "Senior Backend Developer",
+    body: "The GraphQL API implementation transformed our data access patterns. Query efficiency improved by 70% and the TypeScript types generation from the schema was brilliantly executed.",
+    img: "https://randomuser.me/api/portraits/women/37.jpg",
+    rating: 5,
+  },
+  {
+    id: "review11",
+    name: "Marcus Johnson",
+    username: "CTO at FinTech Innovations",
+    body: "Delivered a secure, compliant financial application with robust authentication and real-time transaction processing. The WebSocket implementation for live updates was particularly impressive.",
+    img: "https://randomuser.me/api/portraits/men/22.jpg",
+    rating: 5,
+  },
 ];
 
 // Marquee component implementation
@@ -144,7 +184,7 @@ const ReviewCard = memo(
 
     // Truncate text for mobile
     const truncatedBody =
-      isMobile && body.length > 80 ? body.substring(0, 80) + "..." : body;
+      isMobile && body.length > 40 ? body.substring(0, 40) + "..." : body;
 
     return (
       <figure
@@ -153,8 +193,8 @@ const ReviewCard = memo(
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className={cn(
-          "relative h-full w-36 sm:w-60 cursor-pointer overflow-hidden rounded-xl border my-3 mx-2",
-          "p-3 sm:p-5", // Smaller padding on mobile
+          "relative h-full w-28 xs:w-32 sm:w-60 cursor-pointer overflow-hidden rounded-xl border my-2 mx-1 sm:my-3 sm:mx-2",
+          "p-2 xs:p-3 sm:p-5", // Smaller padding on mobile
           // light styles
           "border-blue-500/20 bg-white/90 backdrop-blur-sm hover:bg-white shadow-sm",
           // dark styles
@@ -178,31 +218,31 @@ const ReviewCard = memo(
         {/* Top border accent */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
 
-        <div className="flex flex-row items-center gap-2 sm:gap-3">
+        <div className="flex flex-row items-center gap-1 sm:gap-3">
           <img
-            className="rounded-full border-2 border-slate-100 dark:border-slate-700"
-            width={isMobile ? 28 : 40}
-            height={isMobile ? 28 : 40}
+            className="rounded-full border border-slate-100 dark:border-slate-700 sm:border-2"
+            width={isMobile ? 20 : 40}
+            height={isMobile ? 20 : 40}
             alt={`Profile picture of ${name}`}
             src={img}
           />
           <div className="flex flex-col">
-            <figcaption className="text-xs sm:text-sm font-semibold text-slate-900 dark:text-white">
+            <figcaption className="text-[10px] xs:text-xs sm:text-sm font-semibold text-slate-900 dark:text-white">
               {name}
             </figcaption>
-            <p className="text-[10px] sm:text-xs text-slate-600 dark:text-slate-400">
+            <p className="text-[8px] xs:text-[10px] sm:text-xs text-slate-600 dark:text-slate-400">
               {username}
             </p>
           </div>
         </div>
 
         {/* Star rating */}
-        <div className="flex mt-2 mb-1">
+        <div className="flex mt-1 sm:mt-2 mb-1">
           {Array.from({ length: 5 }).map((_, i) => (
             <svg
               key={i}
               className={cn(
-                "w-2.5 h-2.5 sm:w-3.5 sm:h-3.5",
+                "w-2 h-2 sm:w-3.5 sm:h-3.5",
                 i < rating
                   ? "text-yellow-400"
                   : "text-gray-300 dark:text-gray-600"
@@ -215,7 +255,7 @@ const ReviewCard = memo(
           ))}
         </div>
 
-        <blockquote className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+        <blockquote className="mt-1 sm:mt-2 text-[10px] xs:text-xs sm:text-sm leading-relaxed text-slate-700 dark:text-slate-300">
           &quot;{truncatedBody}&quot;
         </blockquote>
       </figure>
@@ -318,17 +358,13 @@ export function Reviews() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
           transition={{ duration: 0.8 }}
-          className="relative flex h-[500px] w-full flex-row items-center justify-center gap-2 sm:gap-4 overflow-hidden [perspective:300px] sm:[perspective:400px]"
+          className="relative flex h-[500px] w-full flex-row items-center justify-center gap-1 xs:gap-2 sm:gap-4 overflow-hidden [perspective:300px] sm:[perspective:400px]"
         >
           <motion.div
             initial={{ rotateX: 15, rotateY: -10, rotateZ: 15 }}
             animate={
               isMobileDevice
-                ? {
-                    rotateX: 15,
-                    rotateY: -10,
-                    rotateZ: 15,
-                  }
+                ? { rotateX: 15, rotateY: -10, rotateZ: 15 }
                 : {
                     rotateX: [15, 17, 15],
                     rotateY: [-10, -8, -10],
@@ -341,10 +377,11 @@ export function Reviews() {
               repeatType: "reverse",
               ease: "easeInOut",
             }}
-            className="flex flex-row items-center gap-2 sm:gap-4"
+            className="flex flex-row items-center gap-1 xs:gap-2 sm:gap-4"
             style={{
-              transform:
-                "translateX(-100px) translateY(0px) translateZ(-100px) rotateX(15deg) rotateY(-10deg) rotateZ(15deg)",
+              transform: isMobileDevice
+                ? "translateX(-50px) translateY(0px) translateZ(-50px) rotateX(15deg) rotateY(-10deg) rotateZ(15deg)"
+                : "translateX(-100px) translateY(0px) translateZ(-100px) rotateX(15deg) rotateY(-10deg) rotateZ(15deg)",
             }}
           >
             {/* First column - Always visible */}
@@ -354,8 +391,8 @@ export function Reviews() {
               ))}
             </Marquee>
 
-            {/* Second column - Only on sm screens and up */}
-            <div className={cn("hidden sm:block")}>
+            {/* Second column - Also visible on mobile */}
+            <div>
               <Marquee
                 reverse
                 pauseOnHover

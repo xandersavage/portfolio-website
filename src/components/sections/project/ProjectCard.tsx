@@ -1,4 +1,3 @@
-// src/components/sections/projects/ProjectCard.tsx
 "use client";
 
 import { useState, useRef } from "react";
@@ -9,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Project } from "@/data/projectData";
 import { cn } from "@/lib/utils";
 
-// CSS for the shimmer animation (add to global styles or as a style tag)
+// CSS for the shimmer animation
 const shimmerStyles = `
 @keyframes shimmer {
   0% {
@@ -26,15 +25,73 @@ interface ProjectCardProps {
   onClick: (project: Project) => void;
 }
 
-// Technology color mapping (same as before)
+// Technology category mapping
+const TECH_CATEGORIES: Record<string, string> = {
+  // Frontend technologies
+  React: "frontend",
+  "Next.js": "frontend",
+  TypeScript: "frontend",
+  JavaScript: "frontend",
+  HTML: "frontend",
+  CSS: "frontend",
+  TailwindCSS: "frontend",
+  Redux: "frontend",
+  "Framer Motion": "frontend",
+
+  // Backend technologies
+  "Node.js": "backend",
+  Express: "backend",
+  "REST API": "backend",
+  GraphQL: "backend",
+
+  // Database technologies
+  MongoDB: "database",
+  PostgreSQL: "database",
+  Redis: "database",
+
+  // Tools
+  Git: "tools",
+  Docker: "tools",
+  AWS: "tools",
+  "CI/CD": "tools",
+
+  // Testing
+  Jest: "testing",
+  "React Testing Library": "testing",
+};
+
+// Technology color mapping
 const TECH_COLORS: Record<
   string,
   { bg: string; text: string; border: string }
 > = {
-  // ... (same as in your original code)
+  frontend: {
+    bg: "bg-blue-50 dark:bg-blue-900/30",
+    border: "border-blue-200 dark:border-blue-800",
+    text: "text-blue-700 dark:text-blue-300",
+  },
+  backend: {
+    bg: "bg-emerald-50 dark:bg-emerald-900/30",
+    border: "border-emerald-200 dark:border-emerald-800",
+    text: "text-emerald-700 dark:text-emerald-300",
+  },
+  database: {
+    bg: "bg-amber-50 dark:bg-amber-900/30",
+    border: "border-amber-200 dark:border-amber-800",
+    text: "text-amber-700 dark:text-amber-300",
+  },
+  tools: {
+    bg: "bg-purple-50 dark:bg-purple-900/30",
+    border: "border-purple-200 dark:border-purple-800",
+    text: "text-purple-700 dark:text-purple-300",
+  },
+  testing: {
+    bg: "bg-red-50 dark:bg-red-900/30",
+    border: "border-red-200 dark:border-red-800",
+    text: "text-red-700 dark:text-red-300",
+  },
 };
 
-// Default color (same as before)
 const DEFAULT_TECH_COLOR = {
   bg: "bg-slate-100 dark:bg-slate-700",
   text: "text-slate-700 dark:text-slate-300",
@@ -57,9 +114,13 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
     });
   };
 
-  // Get tech color from our mapping or use default
+  // Get tech color based on category
   const getTechColor = (tech: string) => {
-    return TECH_COLORS[tech] || DEFAULT_TECH_COLOR;
+    // Find the category for this technology
+    const category = TECH_CATEGORIES[tech] || "default";
+
+    // Return the color scheme for this category
+    return TECH_COLORS[category] || DEFAULT_TECH_COLOR;
   };
 
   return (

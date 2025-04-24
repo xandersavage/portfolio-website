@@ -82,15 +82,19 @@ export function Hero() {
           {/* Call to action buttons with increased spacing - adjusted for mobile */}
           <BlurFade delay={0.5 * 5} inView>
             <div className="flex flex-row gap-3 sm:gap-6 justify-center mt-2 sm:mt-4 md:mt-6 mb-6 sm:mb-0 w-full font-body">
-              <RainbowButton className="hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out">
-                View My Work
-              </RainbowButton>
-              <ShinyButton
-                speed={2.5}
-                className="text-base sm:text-lg md:text-xl px-4 sm:px-6 py-2 sm:py-2.5 md:py-3 w-[120px] sm:w-[140px] md:w-[160px] cursor-pointer hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
-              >
-                Hire Me
-              </ShinyButton>
+              <a href="https://github.com/xandersavage">
+                <RainbowButton className="hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out">
+                  View My Work
+                </RainbowButton>
+              </a>
+              <a href="mailto:swankylex@gmail.com">
+                <ShinyButton
+                  speed={2.5}
+                  className="text-base sm:text-lg md:text-xl px-4 sm:px-6 py-2 sm:py-2.5 md:py-3 w-[120px] sm:w-[140px] md:w-[160px] cursor-pointer hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
+                >
+                  Hire Me
+                </ShinyButton>
+              </a>
             </div>
           </BlurFade>
         </div>

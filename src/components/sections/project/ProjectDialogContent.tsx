@@ -73,7 +73,7 @@ export function ProjectDialogContent({
 
       {/* Interactive Tabs for Project Details */}
       <Tabs defaultValue="overview" className="w-full">
-        <TabsList className="grid grid-cols-5 mb-6 dark:bg-slate-100 bg-slate-100 rounded-lg p-1">
+        <TabsList className="grid grid-cols-5 mb-6 bg rounded-lg p-1 bg-slate-200 dark:bg-slate-800">
           <TabsTrigger value="overview" className="flex items-center gap-2">
             <Layers size={16} />
             <span className="hidden sm:inline">Overview</span>

@@ -40,6 +40,7 @@ export function TechnologyChart({ technologies }: TechnologyChartProps) {
     JWT: "Backend",
     WebSockets: "Backend",
     MongoDB: "Database",
+    Mongoose: "Backend",
     PostgreSQL: "Database",
     Prisma: "Database",
     Clerk: "Authentication",
@@ -102,7 +103,7 @@ export function TechnologyChart({ technologies }: TechnologyChartProps) {
   const primaryFocus = getPrimaryFocus();
 
   return (
-    <Card className="border-slate-200 dark:border-slate-700">
+    <Card className="border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200">
       <CardHeader className="pb-2">
         <CardTitle className="text-xl font-bold">
           Technology Breakdown

@@ -202,7 +202,7 @@ export function About() {
                       </div>
                       {/* Progress bar */}
                       <div className="w-full h-2 md:h-3 bg-slate-200 dark:bg-slate-700 rounded-full mt-2 lg:mt-3 overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full w-[85%]"></div>
+                        <div className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full w-[35%]"></div>
                       </div>
                     </div>
                   </BlurFade>

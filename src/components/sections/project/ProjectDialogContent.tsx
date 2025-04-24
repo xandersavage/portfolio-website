@@ -73,7 +73,7 @@ export function ProjectDialogContent({
 
       {/* Interactive Tabs for Project Details */}
       <Tabs defaultValue="overview" className="w-full">
-        <TabsList className="grid grid-cols-5 mb-6">
+        <TabsList className="grid grid-cols-5 mb-6 dark:bg-slate-100 bg-slate-100 rounded-lg p-1">
           <TabsTrigger value="overview" className="flex items-center gap-2">
             <Layers size={16} />
             <span className="hidden sm:inline">Overview</span>
@@ -181,7 +181,11 @@ export function ProjectDialogContent({
             </h3>
 
             {project.challenges && project.solutions ? (
-              <Accordion type="single" collapsible className="w-full">
+              <Accordion
+                type="single"
+                collapsible
+                className="w-full text-slate-700 dark:text-slate-300"
+              >
                 {project.challenges.map((challenge, idx) => (
                   <AccordionItem key={idx} value={`challenge-${idx}`}>
                     <AccordionTrigger className="text-left font-medium">
@@ -224,7 +228,11 @@ export function ProjectDialogContent({
       {/* Action Buttons */}
       <div className="flex flex-wrap gap-4 mt-8 justify-end">
         {project.githubUrl && (
-          <Button asChild variant="outline" className="gap-2 h-12">
+          <Button
+            asChild
+            variant="outline"
+            className="gap-2 h-12 border-slate-300 dark:border-slate-500 dark:text-slate-200"
+          >
             <a
               href={project.githubUrl}
               target="_blank"
@@ -254,7 +262,11 @@ export function ProjectDialogContent({
           </Button>
         )}
 
-        <Button variant="secondary" className="h-12" onClick={onClose}>
+        <Button
+          variant="secondary"
+          className="h-12 dark:bg-slate-600 dark:text-white dark:hover:bg-slate-500"
+          onClick={onClose}
+        >
           Close
         </Button>
       </div>

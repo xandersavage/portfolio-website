@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Container } from "@/components/layout/Container";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 // Define TypeScript interface for review data
 interface ReviewData {
@@ -219,12 +220,14 @@ const ReviewCard = memo(
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
 
         <div className="flex flex-row items-center gap-1 sm:gap-3">
-          <img
+          <Image
             className="rounded-full border border-slate-100 dark:border-slate-700 sm:border-2"
             width={isMobile ? 20 : 40}
             height={isMobile ? 20 : 40}
             alt={`Profile picture of ${name}`}
             src={img}
+            quality={90}
+            priority={true}
           />
           <div className="flex flex-col">
             <figcaption className="text-[10px] xs:text-xs sm:text-sm font-semibold text-slate-900 dark:text-white">
@@ -430,10 +433,10 @@ export function Reviews() {
           </motion.div>
 
           {/* Gradient Overlays for fade effect */}
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-white dark:from-slate-900"></div>
+          {/* <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-white dark:from-slate-900"></div>
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-white dark:from-slate-900"></div>
           <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white dark:from-slate-900"></div>
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white dark:from-slate-900"></div>
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white dark:from-slate-900"></div> */}
         </motion.div>
       </Container>
     </section>

@@ -57,6 +57,7 @@ export function Hero() {
                   "Next.js",
                   "MongoDB",
                   "PostgreSQL",
+                  "and more...",
                 ].map((tech) => (
                   <span
                     key={tech}
@@ -71,20 +72,22 @@ export function Hero() {
 
           {/* Brief introduction - hidden on mobile, visible on md screens and up */}
           <BlurFade delay={0.5 * 4} inView>
-            <p className="hidden md:block text-lg md:text-xl lg:text-2xl text-gray-300 mb-5 sm:mb-10 max-w-3xl font-body">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+            <p className=" text-lg md:text-xl lg:text-2xl text-gray-300 mb-5 sm:mb-10 max-w-3xl font-body">
+              Crafting seamless, responsive web apps with React, Node.js, and
+              Next.js, I blend creativity and code to deliver exceptional
+              digital experiences.
             </p>
           </BlurFade>
 
           {/* Call to action buttons with increased spacing - adjusted for mobile */}
           <BlurFade delay={0.5 * 5} inView>
             <div className="flex flex-row gap-3 sm:gap-6 justify-center mt-2 sm:mt-4 md:mt-6 mb-6 sm:mb-0 w-full font-body">
-              <RainbowButton className="text-base sm:text-lg md:text-xl px-4 sm:px-6 py-2 sm:py-2.5 md:py-3 w-[120px] sm:w-[140px] md:w-[160px]">
+              <RainbowButton className="hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out">
                 View My Work
               </RainbowButton>
               <ShinyButton
-                speed={1}
-                className="text-base sm:text-lg md:text-xl px-4 sm:px-6 py-2 sm:py-2.5 md:py-3 w-[120px] sm:w-[140px] md:w-[160px] cursor-pointer"
+                speed={2.5}
+                className="text-base sm:text-lg md:text-xl px-4 sm:px-6 py-2 sm:py-2.5 md:py-3 w-[120px] sm:w-[140px] md:w-[160px] cursor-pointer hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
               >
                 Hire Me
               </ShinyButton>

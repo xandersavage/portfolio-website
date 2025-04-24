@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   // Add the images configuration
   images: {
-    domains: ["images.unsplash.com"],
+    domains: ["images.unsplash.com", "randomuser.me"],
   },
 };
 

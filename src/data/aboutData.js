@@ -34,7 +34,7 @@ export const aboutData = {
     },
   ],
 
-  projectsCompleted: "25+",
+  projectsCompleted: "5+",
 
   introduction: [
     "I'm a Full Stack Developer with over 5 years of experience building robust, scalable web applications. My passion lies in creating efficient solutions that deliver exceptional user experiences.",

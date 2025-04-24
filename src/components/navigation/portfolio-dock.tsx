@@ -1,12 +1,10 @@
 "use client";
 
-import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
+import { CalendarIcon, MailIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
 import { buttonVariants } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { ModeToggle } from "../theme/mode-toggle";
 import {
   Tooltip,
   TooltipContent,
@@ -64,30 +62,26 @@ const Icons = {
 };
 
 const DATA = {
-  navbar: [
-    { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: PencilIcon, label: "Blog" },
-  ],
   contact: {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/yourusername",
+        url: "https://github.com/xandersavage",
         icon: Icons.github,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://linkedin.com/in/yourusername",
+        url: "https://www.linkedin.com/in/alexander-olomukoro-699255199/",
         icon: Icons.linkedin,
       },
       X: {
         name: "X",
-        url: "https://x.com/yourusername",
+        url: "https://x.com/xandersavage7",
         icon: Icons.x,
       },
       email: {
         name: "Send Email",
-        url: "mailto:your@email.com",
+        url: "mailto:swankylex@gmail.com@",
         icon: Icons.email,
       },
     },
@@ -112,31 +106,7 @@ export default function DockDemo() {
           size={400}
           className="from-transparent via-blue-500 to-transparent"
         />
-        {DATA.navbar.map((item) => (
-          <DockIcon key={item.label}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Link
-                  href={item.href}
-                  aria-label={item.label}
-                  className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-12 rounded-full text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
-                  )}
-                >
-                  <item.icon className="size-4" />
-                </Link>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{item.label}</p>
-              </TooltipContent>
-            </Tooltip>
-          </DockIcon>
-        ))}
-        <Separator
-          orientation="vertical"
-          className="h-full bg-gray-200 dark:bg-gray-700"
-        />
+
         {Object.entries(DATA.contact.social).map(([name, social]) => (
           <DockIcon key={name}>
             <Tooltip>
@@ -160,7 +130,7 @@ export default function DockDemo() {
             </Tooltip>
           </DockIcon>
         ))}
-        <Separator orientation="vertical" className="h-full py-2" />
+        {/* <Separator orientation="vertical" className="h-full py-2" />
         <DockIcon>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -170,7 +140,7 @@ export default function DockDemo() {
               <p>Theme</p>
             </TooltipContent>
           </Tooltip>
-        </DockIcon>
+        </DockIcon> */}
       </Dock>
     </TooltipProvider>
   );

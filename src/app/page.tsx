@@ -1,8 +1,10 @@
+"use client";
+
 import { About } from "@/components/sections/about/About";
 import { Contact } from "@/components/sections/contact/Contact";
 import { Hero } from "@/components/sections/hero/Hero";
 import { Projects } from "@/components/sections/project/Projects";
-import { Reviews } from "@/components/sections/reviews/Reviews";
+import { Certifications } from "@/components/sections/certifications/Certifications";
 
 const HomePage = () => {
   return (
@@ -10,7 +12,7 @@ const HomePage = () => {
       <Hero />
       <About />
       <Projects />
-      <Reviews />
+      <Certifications />
       <Contact />
     </main>
   );

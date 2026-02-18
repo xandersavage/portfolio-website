@@ -7,7 +7,7 @@ import { ShineBorder } from "@/components/magicui/shine-border";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { Code, Database, Globe, Server } from "lucide-react";
+import { Brain, Code, Database, Globe, Server } from "lucide-react";
 import { aboutData } from "@/data/aboutData";
 import { AboutTerminal } from "@/components/sections/about/AboutTerminal";
 
@@ -19,6 +19,7 @@ export function About() {
 
   // Map icon names to components
   const iconComponents = {
+    Brain,
     Code,
     Server,
     Database,

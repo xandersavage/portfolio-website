@@ -42,7 +42,7 @@ export function Hero() {
           {/* Role with proper spacing - reduced text size on smallest screens */}
           <BlurFade delay={0.5 * 2} inView>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-amber-50 font-heading">
-              <AuroraText>Full-Stack Developer</AuroraText>
+              <AuroraText>Full Stack Developer & ML/AI Engineer</AuroraText>
             </h2>
           </BlurFade>
 
@@ -53,10 +53,12 @@ export function Hero() {
                 {[
                   "TypeScript",
                   "React",
-                  "Node.js",
                   "Next.js",
-                  "MongoDB",
-                  "PostgreSQL",
+                  "Node.js",
+                  "Python",
+                  "scikit-learn",
+                  "PyTorch",
+                  "FastAPI",
                   "and more...",
                 ].map((tech) => (
                   <span
@@ -73,9 +75,9 @@ export function Hero() {
           {/* Brief introduction - hidden on mobile, visible on md screens and up */}
           <BlurFade delay={0.5 * 4} inView>
             <p className=" text-lg md:text-xl lg:text-2xl text-gray-300 mb-5 sm:mb-10 max-w-3xl font-body">
-              Crafting seamless, responsive web apps with React, Node.js, and
-              Next.js, I blend creativity and code to deliver exceptional
-              digital experiences.
+              Building production-grade web applications and ML systems — from
+              React frontends and Node.js APIs to scikit-learn pipelines and
+              deep learning models.
             </p>
           </BlurFade>
 

@@ -1,0 +1,38 @@
+
+> olomukoro-portfolio@0.1.0 build
+> next build
+
+   ▲ Next.js 15.2.4
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+
+./src/components/magicui/animated-grid-pattern.tsx
+79:6  Warning: React Hook useEffect has a missing dependency: 'generateSquares'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+98:47  Warning: The ref value 'containerRef.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'containerRef.current' to a variable inside the effect, and use that variable in the cleanup function.  react-hooks/exhaustive-deps
+
+./src/components/sections/about/AboutTerminal.tsx
+165:40  Warning: The ref value 'terminalRef.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'terminalRef.current' to a variable inside the effect, and use that variable in the cleanup function.  react-hooks/exhaustive-deps
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/5) ...
+   Generating static pages (1/5) 
+   Generating static pages (2/5) 
+   Generating static pages (3/5) 
+ ✓ Generating static pages (5/5)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    76.9 kB         224 kB
+└ ○ /_not-found                            977 B         102 kB
++ First Load JS shared by all             101 kB
+  ├ chunks/4bd1b696-75b892f2f0e4d6fe.js  53.2 kB
+  ├ chunks/684-2d143fc685210c07.js       45.3 kB
+  └ other shared chunks (total)          1.99 kB
+
+
+○  (Static)  prerendered as static content
+
